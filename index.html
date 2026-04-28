@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Puzzle Game</title>
+	<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+	<div class="page">
+		<h1>Hacked</h1>
+
+		<section class="step" id="step1">
+			<h2>Riddle 1</h2>
+			<p>I speak without a mouth and hear without ears. I have nobody, but I come alive with wind. What am I?</p>
+			<div class="choices">
+				<button data-answer="true">Echo</button>
+				<button data-answer="false">Shadow</button>
+				<button data-answer="false">Fire</button>
+			</div>
+			<p class="feedback"></p>
+			<button class="next hide">Next</button>
+		</section>
+        <section class="step hide" id="step2">
+			<p>Hacker: I do not think you are clever enough to solve this.</p>
+			<button class="continue">Continue</button>
+		</section>
+
+		<section class="step hide" id="step3">
+			<h2>Find the different emoji</h2>
+			<div class="choices">
+				<button data-answer="false">😀</button>
+				<button data-answer="false">😀</button>
+				<button data-answer="false">😀</button>
+				<button data-answer="true">😈</button>
+			</div>
+			<p class="feedback"></p>
+			<button class="next hide">Next</button>
+		</section>
+
+		<section class="step hide" id="step4">
+			<h2>Riddle 2</h2>
+			<p>I am not alive, but I grow. I do not have lungs, but I need air. What am I?</p>
+			<div class="choices">
+				<button data-answer="false">River</button>
+				<button data-answer="true">Fire</button>
+				<button data-answer="false">Cloud</button>
+			</div>
+			<p class="feedback"></p>
+			<button class="next hide">Next</button>
+		</section>
+
+		<section class="step hide" id="step5">
+			<p>Hacker: If you fail again, I will send another warning.</p>
+			<button class="continue">Continue</button>
+		</section>
+
+		<section class="step hide" id="step6">
+			<h2>Which emoji is different?</h2>
+			<div class="choices">
+				<button data-answer="false">🐶</button>
+				<button data-answer="false">🐶</button>
+				<button data-answer="false">🐶</button>
+				<button data-answer="true">🐱</button>
+			</div>
+			<p class="feedback"></p>
+			<button class="next hide">Next</button>
+		</section>
+
+		<section class="step hide" id="step7">
+			<h2>Off-grid puzzle</h2>
+			<p>Find the odd symbol in the scattered boxes.</p>
+			<div class="offgrid-container">
+				<button data-answer="false" style="top: 10%; left: 8%;">♠</button>
+				<button data-answer="false" style="top: 20%; left: 65%;">♣</button>
+				<button data-answer="false" style="top: 60%; left: 25%;">♠</button>
+				<button data-answer="false" style="top: 15%; left: 40%;">♦</button>
+				<button data-answer="false" style="top: 55%; left: 70%;">♠</button>
+				<button data-answer="true" style="top: 35%; left: 15%;">♥</button>
+				<button data-answer="false" style="top: 75%; left: 45%;">♠</button>
+			</div>
+			<p class="feedback"></p>
+			<button class="next hide">Next</button>
+		</section>
+
+		<section class="step hide" id="step8">
+			<h2>Riddle 3</h2>
+			<p>What has keys but cannot open locks?</p>
+			<div class="choices">
+				<button data-answer="false">Map</button>
+				<button data-answer="true">Piano</button>
+				<button data-answer="false">Clock</button>
+			</div>
+			<p class="feedback"></p>
+			<button class="next hide">Next</button>
+		</section>
+
+		<section class="step hide" id="step9">
+			<p>Hacker: You made it this far. Good luck with the last one.</p>
+			<button class="continue">Finish</button>
+		</section>
+	</div>
+
+	
+
+	<script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,23 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Puzzle Game</title>
-	<link rel="stylesheet" href="assets/style.css" />
-</head>
-<body>
-	<div class="page">
-		<h1>Hacked</h1>
+document.addEventListener('DOMContentLoaded', () => {
+const steps = Array.from(document.querySelectorAll('.step'));
+const overlay = document.getElementById('overlay');
+const restartBtn = document.getElementById('restartBtn');
+let current = 0;
 
-		<section class="step" id="step1">
-			<h2>Riddle 1</h2>
-			<p>I speak without a mouth and hear without ears. I have nobody, but I come alive with wind. What am I?</p>
-			<div class="choices">
-				<button data-answer="true">Echo</button>
-				<button data-answer="false">Shadow</button>
-				<button data-answer="false">Fire</button>
-			</div>
-			<p class="feedback"></p>
-			<button class="next hide">Next</button>
-		</section>
+function showStep(index) {
+steps[current].classList.add('hide');
+current = index;
+if (current >= steps.length) current = 0;
+steps[current].classList.remove('hide');
+const feedback = steps[current].querySelector('.feedback');
+if (feedback) feedback.textContent = '';
+}
+
+steps.forEach((step, index) => {
+step.querySelectorAll('button[data-answer]').forEach((button) => {
+button.addEventListener('click', () => {
+const correct = button.dataset.answer === 'true';
+const feedback = step.querySelector('.feedback');
+if (correct) {
+if (feedback) feedback.textContent = 'Correct!';
+showStep(index + 1);
+} else {
+overlay.classList.remove('hide');
+}
+});
+});
+
+const continueButton = step.querySelector('.continue');
+if (continueButton) {
+continueButton.addEventListener('click', () => showStep(index + 1));
+}
+});
+
+restartBtn.addEventListener('click', () => {
+overlay.classList.add('hide');
+showStep(0);
+});
+
+showStep(0);
+});
