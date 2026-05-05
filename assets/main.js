@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const restartButton = step.querySelector('.restart');
     if (restartButton) {
     restartButton.addEventListener('click', () => showStep(0));
+     const startButton = step.querySelector('.start');
+    if (startButton) {
+    startButton.addEventListener('click', () => showStep(index + 1));
+    }
     }
     });
 
