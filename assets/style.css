@@ -98,3 +98,25 @@ button:hover {
 	margin: 0 0 20px;
 	color: #fff;
 }
+
+#wrong-answer {
+	position: relative;
+	background-image: url("assets/img/error.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: #fff;
+	border: 2px solid #ff4d4d;
+}
+
+#wrong-answer::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.55);
+}
+
+#wrong-answer > * {
+	position: relative;
+	z-index: 1;
+}
